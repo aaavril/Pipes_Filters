@@ -9,7 +9,8 @@ namespace CompAndDel
         static void Main(string[] args)
         {
             PipeNull pipeNull = new PipeNull();
-            PipeSerial pipeSerial2 = new PipeSerial(new FilterNegative(), pipeNull);
+            PipeSerial pipeSerial3 = new PipeSerial(new FilterSavePicture("luke2.jpg"), pipeNull);
+            PipeSerial pipeSerial2 = new PipeSerial(new FilterNegative(), pipeSerial3);
             PipeSerial pipeSerial1 = new PipeSerial(new FilterGreyscale(), pipeSerial2);
 
             PictureProvider provider = new PictureProvider();
